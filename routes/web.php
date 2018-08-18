@@ -12,11 +12,8 @@
 */
 
 Route::GET('/', function () {
-    return view('welcome');
+    return view('utama');
 });
-Route::resource('jurusan','CRUDController');
-
-// Route::GET('/jurusan', 'CRUDController@index');
-// Route::GET('/jurusan/create', 'CRUDController@create');
+Route::resource('jurusan','JurusanController');
 
 

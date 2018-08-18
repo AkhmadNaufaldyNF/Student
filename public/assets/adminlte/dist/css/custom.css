@@ -1,0 +1,12 @@
+.button-add {
+    margin-top: 10px;
+    float: right;
+  }
+
+.td-edit{
+    width: 0px;
+}
+
+.td-delete{
+    width: 0px;
+}
