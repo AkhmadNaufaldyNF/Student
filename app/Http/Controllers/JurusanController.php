@@ -75,9 +75,9 @@ class JurusanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idjurusan)
     {
-        $jurusans = Jurusan::find($id);
+        $jurusans = Jurusan::find($idjurusan);
 
         $jurusans -> deskripsi = $request -> get('jurusan');
         $jurusans -> save();
