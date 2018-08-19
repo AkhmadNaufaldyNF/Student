@@ -34,7 +34,7 @@
                                     <td>{{ $Siswa->jurusan->deskripsi }}</td>
                                     <td class="td-edit"><a href="" class="btn btn-warning">Ubah</a></td>
                                     <td class="td-delete">
-                                        <form action="" method=POST class="delete_form">
+                                        <form action="{{action('SiswaController@destroy', $Siswa['idsiswa'])}}" method=POST class="delete_form">
                                             {{csrf_field()}}
                                             <input type="hidden" value="DELETE" name="_method">
                                             <button class="btn btn-danger" type="submit">Hapus</button>
@@ -45,7 +45,7 @@
                             </tbody>
                         </table>
                         <div class="button-add">
-                            <a href="" class="btn btn-primary">Tambah Data</a>
+                            <a href="{{route('siswa.create')}}" class="btn btn-primary">Tambah Data</a>
                         </div>
                     </div>
                 </div>

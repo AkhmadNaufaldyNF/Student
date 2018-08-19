@@ -20,6 +20,7 @@
 
                         <div class="box-footer">
                             <button type="submit" class="btn btn-success">Simpan</button>
+                            <a href="{{url('jurusan')}}" class="btn btn-danger">Batal</a>
                         </div>
                     </form>
                 </div>

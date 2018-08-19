@@ -20,7 +20,7 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('siswa.simpan');        
     }
 
     /**
@@ -40,7 +40,7 @@ class SiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($idsiswa)
     {
        //
     }
@@ -51,7 +51,7 @@ class SiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($idjurusan)
+    public function edit($idsiswa)
     {
         //
     }
@@ -63,7 +63,7 @@ class SiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $idjurusan)
+    public function update(Request $request, $idsiswa)
     {
         //
     }
@@ -74,8 +74,11 @@ class SiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($idjurusan)
+    public function destroy($idsiswa)
     {
-        //
+        $siswas = Siswa::find($idsiswa);
+        $siswas->delete();
+
+        return redirect('/');
     }
 }
