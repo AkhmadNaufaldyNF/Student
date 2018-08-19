@@ -13,4 +13,8 @@ class Jurusan extends Model
     protected $primaryKey = 'idjurusan';
 
     public $timestamps = false;
+
+    public function jurusan(){
+        return $this->belongsTo('Siswa', 'idjurusan');
+    }
 }

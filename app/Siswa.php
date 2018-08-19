@@ -12,9 +12,9 @@ class Siswa extends Model
 
     protected $primaryKey = 'idsiswa';
 
-    public function jurusan(){
-        return $this->hasOne('App\Jurusan', 'idjurusan');
-    }
-
     public $timestamps = false;
+
+    public function jurusan(){
+        return $this->hasOne('App\Jurusan', 'idjurusan', 'idjurusan');
+    }
 }
