@@ -6,5 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Siswa extends Model
 {
-    //
+    protected $table = 'siswa';
+
+    protected $fillable = ['idjurusan', 'nis', 'nama', 'kelas'];
+
+    protected $primaryKey = 'idsiswa';
+
+    public function jurusan(){
+        return $this->hasOne('App\Jurusan', 'idjurusan');
+    }
+
+    public $timestamps = false;
 }

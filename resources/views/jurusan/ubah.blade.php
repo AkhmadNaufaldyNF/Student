@@ -2,8 +2,7 @@
 
 @section('content')
 
-<div class="content-wrapper">
-    <section class="content">
+<section class="content">
         <div class="row">
             <div class="col-md-6">
                 <div class="box box-primary">
@@ -29,7 +28,6 @@
             </div>
         </div>
     </section>
-</div>
 
 @endsection
 

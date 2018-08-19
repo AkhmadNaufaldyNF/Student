@@ -54,9 +54,11 @@
     </section>
     <!-- /.sidebar -->
   </aside>
-  
+<div class="content-wrapper">
+
   @yield('content')
 
+</div>
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>

@@ -4,7 +4,7 @@
 
 <section class="content-header">
         <h1>
-            DATA JURUSAN
+            DATA SISWA
         </h1>
     </section>
 
@@ -17,18 +17,24 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Deskripsi</th>
+                                    <th>NIS</th>
+                                    <th>Nama</th>
+                                    <th>Kelas</th>
+                                    <th>Jurusan</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                @foreach($jurusans as $indexKey => $Jurusan)
+                                @foreach($siswas as $indexKey => $Siswa)
                                 <tr>
                                     <td>{{ $indexKey+1 }}</td>
-                                    <td>{{ $Jurusan['deskripsi'] }}</td>
-                                    <td class="td-edit"><a href="{{action('JurusanController@edit', $Jurusan['idjurusan'])}}" class="btn btn-warning">Ubah</a></td>
+                                    <td>{{ $Siswa['nis'] }}</td>
+                                    <td>{{ $Siswa['nama'] }}</td>
+                                    <td>{{ $Siswa['kelas'] }}</td>
+                                    <td>{{ $Siswa->jurusan->deskripsi }}</td>
+                                    <td class="td-edit"><a href="" class="btn btn-warning">Ubah</a></td>
                                     <td class="td-delete">
-                                        <form action="{{action('JurusanController@destroy', $Jurusan['idjurusan'])}}" method=POST class="delete_form">
+                                        <form action="" method=POST class="delete_form">
                                             {{csrf_field()}}
                                             <input type="hidden" value="DELETE" name="_method">
                                             <button class="btn btn-danger" type="submit">Hapus</button>
@@ -39,7 +45,7 @@
                             </tbody>
                         </table>
                         <div class="button-add">
-                            <a href="{{route('jurusan.create')}}" class="btn btn-primary">Tambah Data</a>
+                            <a href="" class="btn btn-primary">Tambah Data</a>
                         </div>
                     </div>
                 </div>

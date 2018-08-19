@@ -11,9 +11,12 @@
 |
 */
 
-Route::GET('/', function () {
-    return view('utama');
-});
+// Route::GET('/', function () {
+//     return view('utama');
+// });
+
+Route::GET('/', 'SiswaController@index');
 Route::resource('jurusan','JurusanController');
+Route::resource('siswa','SiswaController');
 
 
