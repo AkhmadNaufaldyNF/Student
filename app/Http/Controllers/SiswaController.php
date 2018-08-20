@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Siswa;
+use App\Jurusan;
 
 class SiswaController extends Controller
 {
@@ -20,7 +21,8 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        return view('siswa.simpan');        
+        $items = Jurusan::all();
+        return view('siswa.simpan', compact('items'));        
     }
 
     /**
@@ -31,7 +33,15 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $siswas = new Siswa([
+            'nis'    =>  $request -> get('nis'),
+            'nama'    =>  $request -> get('nama'),
+            'kelas'    =>  $request -> get('kelas'),
+            'idjurusan'    =>  $request -> get('item'),
+        ]);
+
+        $siswas -> save();
+        return redirect('/');
     }
 
     /**
@@ -53,7 +63,10 @@ class SiswaController extends Controller
      */
     public function edit($idsiswa)
     {
-        //
+        $items = Jurusan::all();
+
+        $siswas = Siswa::find($idsiswa);
+        return view('siswa.ubah', compact('siswas','items', 'idsiswa'));
     }
 
     /**
@@ -65,7 +78,15 @@ class SiswaController extends Controller
      */
     public function update(Request $request, $idsiswa)
     {
-        //
+        $siswas = Siswa::find($idsiswa);
+
+        $siswas -> idjurusan = $request -> get('item');
+        $siswas -> nama = $request -> get('nama');
+        $siswas -> nis = $request -> get('nis');
+        $siswas -> kelas = $request -> get('kelas');
+        $siswas -> save();
+
+        return redirect('/');
     }
 
     /**

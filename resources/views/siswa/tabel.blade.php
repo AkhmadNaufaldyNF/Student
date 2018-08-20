@@ -32,7 +32,7 @@
                                     <td>{{ $Siswa['nama'] }}</td>
                                     <td>{{ $Siswa['kelas'] }}</td>
                                     <td>{{ $Siswa->jurusan['deskripsi'] }}</td>
-                                    <td class="td-edit"><a href="" class="btn btn-warning">Ubah</a></td>
+                                    <td class="td-edit"><a href="{{action('SiswaController@edit', $Siswa['idsiswa'])}}" class="btn btn-warning">Ubah</a></td>
                                     <td class="td-delete">
                                         <form action="{{action('SiswaController@destroy', $Siswa['idsiswa'])}}" method=POST class="delete_form">
                                             {{csrf_field()}}

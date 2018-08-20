@@ -15,6 +15,6 @@ class Siswa extends Model
     public $timestamps = false;
 
     public function jurusan(){
-        return $this->hasOne('App\Jurusan', 'idjurusan', 'idjurusan');
+        return $this->belongsTo('App\Jurusan', 'idjurusan');
     }
 }
